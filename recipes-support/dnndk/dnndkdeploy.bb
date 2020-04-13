@@ -3,6 +3,11 @@ DESCRIPTION = "Xilinx Vitis AI DNNDK Runtime User Space Libraries and headers"
 
 LICENSE = "CLOSED"
 
+PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE_zynqmp = ".*"
+
 DNNDKPATH="/proj/yocto/dnndk/${SOC_FAMILY}_latest"
 SRC_URI = "file://${DNNDKPATH}"
 

@@ -11,6 +11,11 @@ S = "${WORKDIR}/git"
 
 inherit autotools-brokensep
 
+PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE_zynqmp = ".*"
+
 DEPENDS = "xrt"
 
 FILES_${PN} += " \
