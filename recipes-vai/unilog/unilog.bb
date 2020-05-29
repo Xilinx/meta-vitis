@@ -8,6 +8,11 @@ SRC_URI = "git://gits@xcdl190260/aisw/unilog.git;protocol=ssh;branch=dev"
 SRCREV = "037d510126da34b03500527c326bd9459399a21d"
 S = "${WORKDIR}/git"
 
+PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE_zynqmp = ".*"
+
 DEPENDS = "glog"
 
 inherit cmake

@@ -8,6 +8,11 @@ SRC_URI = "git://gits@xcdl190260/aisw/vitis-ai-library.git;protocol=ssh;branch=d
 SRCREV = "6fecaa50a473212e6820bde43edc5ce6622e8de1"
 S = "${WORKDIR}/git"
 
+PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE_zynqmp = ".*"
+
 DEPENDS = "protobuf-native vart opencv googletest"
 RDEPENDS_${PN} = "python3-core"
 

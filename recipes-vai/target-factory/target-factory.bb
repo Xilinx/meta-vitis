@@ -8,6 +8,11 @@ SRC_URI = "git://gits@xcdl190260/aisw/target_factory.git;protocol=ssh;branch=dev
 SRCREV = "660ee92cbaaa631bffd5780dde5d95b23996241c"
 S = "${WORKDIR}/git"
 
+PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE_zynqmp = ".*"
+
 DEPENDS = "unilog protobuf-native protobuf-c"
 
 inherit cmake

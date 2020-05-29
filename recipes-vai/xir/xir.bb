@@ -8,6 +8,11 @@ SRC_URI = "git://gits@xcdl190260/aisw/xir.git;protocol=ssh;branch=dev"
 SRCREV = "7e4cd788a8790faa720476453666b18c60f0dac8"
 S = "${WORKDIR}/git"
 
+PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE_zynqmp = ".*"
+
 DEPENDS = "protobuf-native protobuf-c boost unilog python3-pybind11"
 
 inherit cmake

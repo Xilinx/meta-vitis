@@ -8,6 +8,11 @@ SRC_URI = "git://gits@xcdl190260/aisw/vart.git;protocol=ssh;branch=dev"
 SRCREV = "081c60cb56ce6d3bc39f620fe569c5d61d73b285"
 S = "${WORKDIR}/git"
 
+PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+COMPATIBLE_MACHINE = "^$"
+COMPATIBLE_MACHINE_zynqmp = ".*"
+
 DEPENDS = "json-c xrt xir target-factory"
 
 inherit cmake
