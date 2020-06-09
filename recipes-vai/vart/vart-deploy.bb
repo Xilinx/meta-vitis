@@ -11,8 +11,8 @@ COMPATIBLE_MACHINE_zynqmp = ".*"
 VARTPATH="/proj/yocto/vitisai/vart_latest"
 SRC_URI = "file://${VARTPATH}"
 
-DEPENDS = "json-c xrt xir target-factory"
-RDEPENDS_${PN} = "xrt"
+DEPENDS = "json-c xrt glog"
+RDEPENDS_${PN} = "xrt unilog-deploy xir-deploy target-factory-deploy"
 
 do_install() {
     cp -r ${WORKDIR}/${VARTPATH}/{usr,etc} ${D}/

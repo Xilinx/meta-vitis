@@ -11,7 +11,8 @@ COMPATIBLE_MACHINE_zynqmp = ".*"
 TFPATH="/proj/yocto/vitisai/target-factory_latest"
 SRC_URI = "file://${TFPATH}"
 
-DEPENDS = "unilog protobuf-c"
+DEPENDS = "glog protobuf-c"
+RDEPENDS_${PN} = "unilog-deploy"
 
 do_install() {
     cp -r ${WORKDIR}/${TFPATH}/usr ${D}/

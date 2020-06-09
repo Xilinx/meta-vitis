@@ -11,8 +11,8 @@ COMPATIBLE_MACHINE_zynqmp = ".*"
 VAILIBPATH="/proj/yocto/vitisai/vitis-ai-library_latest"
 SRC_URI = "file://${VAILIBPATH}"
 
-DEPENDS = "vart opencv googletest"
-RDEPENDS_${PN} = "python3-core"
+DEPENDS = "opencv googletest protobuf-c json-c"
+RDEPENDS_${PN} = "python3-core vart-deploy xir-deploy"
 
 do_install() {
     cp -r ${WORKDIR}/${VAILIBPATH}/usr ${D}/

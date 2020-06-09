@@ -11,7 +11,8 @@ COMPATIBLE_MACHINE_zynqmp = ".*"
 XIRPATH="/proj/yocto/vitisai/xir_latest"
 SRC_URI = "file://${XIRPATH}"
 
-DEPENDS = "protobuf-c boost unilog python3-pybind11"
+DEPENDS = "protobuf-c boost python3-pybind11 glog"
+RDEPENDS_${PN} = "unilog-deploy"
 
 do_install() {
     cp -r ${WORKDIR}/${XIRPATH}/usr ${D}/
