@@ -4,7 +4,7 @@ DESCRIPTION = "Runner is an application level runtime interface for DPU IPs base
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
-SRC_URI = "git://gits@xcdl190260/aisw/vart.git;protocol=ssh;branch=dev"
+SRC_URI = "git://gits@xcdl190260/aisw/vart.git;protocol=ssh;nobranch=1"
 SRCREV = "a7d6128b1fe59dfd49a39881fa6d0bb28ca70788"
 S = "${WORKDIR}/git"
 
