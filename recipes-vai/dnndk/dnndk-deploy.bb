@@ -32,3 +32,6 @@ do_install() {
 FILES_${PN} += " \
 	/usr/* \
 "
+
+RREPLACES_${PN} = "dnndkdeploy"
+RCONFLICTS_${PN} = "dnndkdeploy"
