@@ -9,6 +9,10 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
+# This recipe was renamed, so we need to indicate we replace it by setting a
+# provide.
+PROVIDES = "dnndkdeploy"
+
 DNNDKPATH="/proj/yocto/vitisai/dnndk_latest"
 SRC_URI = "file://${DNNDKPATH}"
 
