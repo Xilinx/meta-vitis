@@ -15,7 +15,9 @@ DEPENDS = "json-c xrt glog"
 RDEPENDS_${PN} = "python3-core xrt unilog-deploy xir-deploy target-factory-deploy"
 
 do_install() {
-    cp -r ${WORKDIR}/${VARTPATH}/{usr,etc} ${D}/
+    cp -r ${WORKDIR}/${VARTPATH}/usr \
+          ${WORKDIR}/${VARTPATH}/etc \
+	${D}/.
 
     # Due to the way things are copied, we need to
     # potentially correct permissions
