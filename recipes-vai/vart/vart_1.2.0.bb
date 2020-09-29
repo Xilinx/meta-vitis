@@ -18,6 +18,10 @@ inherit cmake
 
 EXTRA_OECMAKE += "-DENABLE_CPU_RUNNER=OFF -DENABLE_SIM_RUNNER=OFF -DENABLE_DPU_RUNNER=ON -DCMAKE_BUILD_TYPE=Release"
 
+# Vart uses dl_open, so package the .so files in the runtime package
+FILES_SOLIBSDEV = ""
+INSANE_SKIP_${PN} += "dev-so"
+
 # need to include python3.7/site-packages/runner.so if PACKAGECONFIG includes python
 FILES_${PN} += "${libdir}/*"
 

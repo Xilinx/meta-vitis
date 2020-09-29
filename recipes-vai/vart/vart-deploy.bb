@@ -31,6 +31,10 @@ do_install() {
     fi
 }
 
+# Vart uses dl_open, so package the .so files in the runtime package
+FILES_SOLIBSDEV = ""
+INSANE_SKIP_${PN} += "dev-so"
+
 FILES_${PN} += " \
         /usr/* \
         /etc/* \
