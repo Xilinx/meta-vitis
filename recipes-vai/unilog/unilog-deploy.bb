@@ -8,13 +8,13 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-UNILOGPATH="/proj/yocto/vitisai/unilog_latest"
+UNILOGPATH ?= "/proj/yocto/vitisai/unilog_latest/unilog.tar.gz"
 SRC_URI = "file://${UNILOGPATH}"
 
 DEPENDS = "glog"
 
 do_install() {
-    cp -r ${WORKDIR}/${UNILOGPATH}/usr ${D}/
+    cp -r ${WORKDIR}/usr ${D}/
 
     # Due to the way things are copied, we need to
     # potentially correct permissions

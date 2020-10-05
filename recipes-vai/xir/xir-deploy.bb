@@ -8,14 +8,14 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-XIRPATH="/proj/yocto/vitisai/xir_latest"
+XIRPATH ?= "/proj/yocto/vitisai/xir_latest/xir.tar.gz"
 SRC_URI = "file://${XIRPATH}"
 
 DEPENDS = "protobuf-c boost python3-pybind11 glog"
 RDEPENDS_${PN} = "unilog-deploy"
 
 do_install() {
-    cp -r ${WORKDIR}/${XIRPATH}/usr ${D}/
+    cp -r ${WORKDIR}/usr ${D}/
 
     # Due to the way things are copied, we need to
     # potentially correct permissions

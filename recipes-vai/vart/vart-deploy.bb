@@ -8,15 +8,15 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-VARTPATH="/proj/yocto/vitisai/vart_latest"
+VARTPATH ?= "/proj/yocto/vitisai/vart_latest/vart.tar.gz"
 SRC_URI = "file://${VARTPATH}"
 
 DEPENDS = "json-c xrt glog"
 RDEPENDS_${PN} = "python3-core xrt unilog-deploy xir-deploy target-factory-deploy"
 
 do_install() {
-    cp -r ${WORKDIR}/${VARTPATH}/usr \
-          ${WORKDIR}/${VARTPATH}/etc \
+    cp -r ${WORKDIR}/usr \
+          ${WORKDIR}/etc \
 	${D}/.
 
     # Due to the way things are copied, we need to
