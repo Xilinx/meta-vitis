@@ -8,14 +8,14 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-TFPATH="/proj/yocto/vitisai/target-factory_latest"
+TFPATH ?= "/proj/yocto/vitisai/target-factory_latest/target-factory.tar.gz"
 SRC_URI = "file://${TFPATH}"
 
 DEPENDS = "glog protobuf-c"
 RDEPENDS_${PN} = "unilog-deploy"
 
 do_install() {
-    cp -r ${WORKDIR}/${TFPATH}/usr ${D}/
+    cp -r ${WORKDIR}/usr ${D}/
 
     # Due to the way things are copied, we need to
     # potentially correct permissions

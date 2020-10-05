@@ -13,13 +13,13 @@ COMPATIBLE_MACHINE_zynqmp = ".*"
 # provide.
 PROVIDES = "dnndkdeploy"
 
-DNNDKPATH="/proj/yocto/vitisai/dnndk_latest"
+DNNDKPATH ?= "/proj/yocto/vitisai/dnndk_latest/dnndk.tar.gz"
 SRC_URI = "file://${DNNDKPATH}"
 
 RDEPENDS_${PN} = "xrt"
 
 do_install() {
-    cp -r ${WORKDIR}/${DNNDKPATH}/usr ${D}/
+    cp -r ${WORKDIR}/usr ${D}/
 
     # Due to the way things are copied, we need to
     # potentially correct permissions

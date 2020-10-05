@@ -8,14 +8,14 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-VAILIBPATH="/proj/yocto/vitisai/vitis-ai-library_latest"
+VAILIBPATH ?= "/proj/yocto/vitisai/vitis-ai-library_latest/vitis-ai-library.tar.gz"
 SRC_URI = "file://${VAILIBPATH}"
 
 DEPENDS = "opencv googletest protobuf-c json-c"
 RDEPENDS_${PN} = "python3-core vart-deploy xir-deploy"
 
 do_install() {
-    cp -r ${WORKDIR}/${VAILIBPATH}/usr ${D}/
+    cp -r ${WORKDIR}/usr ${D}/
 
     # Due to the way things are copied, we need to
     # potentially correct permissions
