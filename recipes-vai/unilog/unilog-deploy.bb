@@ -8,7 +8,7 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-UNILOGPATH ?= "/proj/yocto/vitisai/unilog_latest/unilog.tar.gz"
+UNILOGPATH ?= "unilog.tar.gz"
 SRC_URI = "file://${UNILOGPATH}"
 
 DEPENDS = "glog"

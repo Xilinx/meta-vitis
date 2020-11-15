@@ -13,7 +13,7 @@ COMPATIBLE_MACHINE_zynqmp = ".*"
 # provide.
 PROVIDES = "dnndkdeploy"
 
-DNNDKPATH ?= "/proj/yocto/vitisai/dnndk_latest/dnndk.tar.gz"
+DNNDKPATH ?= "dnndk.tar.gz"
 SRC_URI = "file://${DNNDKPATH}"
 
 RDEPENDS_${PN} = "xrt"

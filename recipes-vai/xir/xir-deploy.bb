@@ -8,7 +8,7 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-XIRPATH ?= "/proj/yocto/vitisai/xir_latest/xir.tar.gz"
+XIRPATH ?= "xir.tar.gz"
 SRC_URI = "file://${XIRPATH}"
 
 DEPENDS = "protobuf-c boost python3-pybind11 glog"

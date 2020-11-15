@@ -8,7 +8,7 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-VARTPATH ?= "/proj/yocto/vitisai/vart_latest/vart.tar.gz"
+VARTPATH ?= "vart.tar.gz"
 SRC_URI = "file://${VARTPATH}"
 
 DEPENDS = "json-c xrt glog"

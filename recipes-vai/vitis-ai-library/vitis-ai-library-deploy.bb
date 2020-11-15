@@ -8,7 +8,7 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-VAILIBPATH ?= "/proj/yocto/vitisai/vitis-ai-library_latest/vitis-ai-library.tar.gz"
+VAILIBPATH ?= "vitis-ai-library.tar.gz"
 SRC_URI = "file://${VAILIBPATH}"
 
 DEPENDS = "opencv googletest protobuf-c json-c"

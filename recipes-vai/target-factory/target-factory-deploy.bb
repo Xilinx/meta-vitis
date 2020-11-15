@@ -8,7 +8,7 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-TFPATH ?= "/proj/yocto/vitisai/target-factory_latest/target-factory.tar.gz"
+TFPATH ?= "target-factory.tar.gz"
 SRC_URI = "file://${TFPATH}"
 
 DEPENDS = "glog protobuf-c"
