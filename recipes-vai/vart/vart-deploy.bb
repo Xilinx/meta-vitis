@@ -8,8 +8,9 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-VARTPATH ?= "/proj/yocto/vitisai/vart_latest/vart.tar.gz"
-SRC_URI = "file://${VARTPATH}"
+VARTPATH ?= "http://petalinux.xilinx.com/sswreleases/rel-v2020.2/vitisai/vart.tar.gz"
+SRC_URI = "${VARTPATH}"
+SRC_URI[md5sum] = "f4cb807d8b84c3dde77db36ecbb06b23"
 
 DEPENDS = "json-c xrt glog"
 RDEPENDS_${PN} = "python3-core xrt unilog-deploy xir-deploy target-factory-deploy"

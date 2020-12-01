@@ -13,8 +13,9 @@ COMPATIBLE_MACHINE_zynqmp = ".*"
 # provide.
 PROVIDES = "dnndkdeploy"
 
-DNNDKPATH ?= "/proj/yocto/vitisai/dnndk_latest/dnndk.tar.gz"
-SRC_URI = "file://${DNNDKPATH}"
+DNNDKPATH ?= "http://petalinux.xilinx.com/sswreleases/rel-v2020.2/vitisai/dnndk.tar.gz"
+SRC_URI = "${DNNDKPATH}"
+SRC_URI[md5sum] = "9b3c62c9eb16081159da98f8c6ab5a52"
 
 RDEPENDS_${PN} = "xrt"
 

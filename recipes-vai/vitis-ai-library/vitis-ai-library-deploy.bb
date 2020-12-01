@@ -8,8 +8,9 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-VAILIBPATH ?= "/proj/yocto/vitisai/vitis-ai-library_latest/vitis-ai-library.tar.gz"
-SRC_URI = "file://${VAILIBPATH}"
+VAILIBPATH ?= "http://petalinux.xilinx.com/sswreleases/rel-v2020.2/vitisai/vitis-ai-library.tar.gz"
+SRC_URI = "${VAILIBPATH}"
+SRC_URI[md5sum] = "08d4211df5be9a3b22e2a5d9e8f97cdf"
 
 DEPENDS = "opencv googletest protobuf-c json-c"
 RDEPENDS_${PN} = "python3-core vart-deploy xir-deploy"
