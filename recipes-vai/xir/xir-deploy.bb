@@ -8,8 +8,9 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-XIRPATH ?= "/proj/yocto/vitisai/xir_latest/xir.tar.gz"
-SRC_URI = "file://${XIRPATH}"
+XIRPATH ?= "http://petalinux.xilinx.com/sswreleases/rel-v2020.2/vitisai/xir.tar.gz"
+SRC_URI = "${XIRPATH}"
+SRC_URI[md5sum] = "fa390bc157fdcc9496ae11890bdc0f31"
 
 DEPENDS = "protobuf-c boost python3-pybind11 glog"
 RDEPENDS_${PN} = "unilog-deploy"

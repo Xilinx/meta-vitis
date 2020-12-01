@@ -8,8 +8,9 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-UNILOGPATH ?= "/proj/yocto/vitisai/unilog_latest/unilog.tar.gz"
-SRC_URI = "file://${UNILOGPATH}"
+UNILOGPATH ?= "http://petalinux.xilinx.com/sswreleases/rel-v2020.2/vitisai/unilog.tar.gz"
+SRC_URI = "${UNILOGPATH}"
+SRC_URI[md5sum] = "f10c8d3034e3ebdc2a0b58c9ff999ce6"
 
 DEPENDS = "glog"
 

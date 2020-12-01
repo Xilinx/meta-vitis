@@ -8,8 +8,9 @@ PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE_zynqmp = ".*"
 
-TFPATH ?= "/proj/yocto/vitisai/target-factory_latest/target-factory.tar.gz"
-SRC_URI = "file://${TFPATH}"
+TFPATH ?= "http://petalinux.xilinx.com/sswreleases/rel-v2020.2/vitisai/target-factory.tar.gz"
+SRC_URI = "${TFPATH}"
+SRC_URI[md5sum] = "950959ce1df3e79ccb162b83a7ef6789"
 
 DEPENDS = "glog protobuf-c"
 RDEPENDS_${PN} = "unilog-deploy"
