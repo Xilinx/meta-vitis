@@ -4,9 +4,9 @@ DESCRIPTION = "A factory to manage DPU target description infos. Register target
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
-SRC_URI = "git://gits@xcdl190260/aisw/target_factory.git;protocol=ssh;nobranch=1"
-SRCREV = "65a73cb6a5cfc86b604afcf75f326186ec323ce0"
-S = "${WORKDIR}/git"
+SRC_URI = "git://github.com/Xilinx/Vitis-AI.git;protocol=https"
+SRCREV = "e86b6efae11f8703ee647e4a99004dc980b84989"
+S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/target_factory"
 
 DEPENDS = "unilog protobuf-native protobuf-c"
 
