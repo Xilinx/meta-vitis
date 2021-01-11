@@ -1,0 +1,26 @@
+From 35ffc13c7d7129c2f7b6ad8396eaf27f6bc8ec57 Mon Sep 17 00:00:00 2001
+From: Tianfang Meng <tianfang@xilinx.com>
+Date: Mon, 11 Jan 2021 15:39:05 +0800
+Subject: [PATCH 2/2] Compatible with opencv4.4
+
+---
+ .../Vitis-AI-Runtime/VART/vart/dpu-runner/test/CMakeLists.txt  | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/dpu-runner/test/CMakeLists.txt b/dpu-runner/test/CMakeLists.txt
+index e15d0eee..55b6bc6b 100644
+--- a/dpu-runner/test/CMakeLists.txt
++++ b/dpu-runner/test/CMakeLists.txt
+@@ -20,6 +20,9 @@ execute_process(
+   )
+ include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+ 
++find_package(OpenCV REQUIRED)
++include_directories("${OpenCV_INCLUDE_DIRS}")
++
+ foreach(FNAME resnet50.cpp test_dpu_runner.cpp test_dpu_runner_mt.cpp)
+   get_filename_component(F_PREFIX ${FNAME} NAME_WE)
+   set(ELF ${F_PREFIX})
+-- 
+2.17.1
+
