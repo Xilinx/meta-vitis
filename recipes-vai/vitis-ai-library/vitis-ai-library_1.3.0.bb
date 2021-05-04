@@ -4,11 +4,11 @@ DESCRIPTION = "Xilinx Vitis AI components - VITIS AI LIBRARY"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
-SRC_URI = " \
-	git://github.com/Xilinx/Vitis-AI.git;protocol=https \
+require recipes-vai/vitis-ai-library/vitisai.inc
+
+SRC_URI += " \
 	file://0001-To-be-compatible-with-opencv4.4-and-gcc10.2.patch \
 "
-SRCREV = "e86b6efae11f8703ee647e4a99004dc980b84989"
 S = "${WORKDIR}/git/tools/Vitis-AI-Library"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"

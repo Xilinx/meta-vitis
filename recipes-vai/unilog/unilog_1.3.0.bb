@@ -4,8 +4,8 @@ DESCRIPTION = "Xilinx Vitis AI components - a wrapper for glog. Define unified l
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
-SRC_URI = "git://github.com/Xilinx/Vitis-AI.git;protocol=https"
-SRCREV = "e86b6efae11f8703ee647e4a99004dc980b84989"
+require recipes-vai/vitis-ai-library/vitisai.inc
+
 S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/unilog"
 
 DEPENDS = "glog boost"
