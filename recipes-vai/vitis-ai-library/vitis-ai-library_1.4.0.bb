@@ -12,7 +12,7 @@ DEPENDS = "protobuf-native vart opencv googletest libeigen libeigen-native"
 RDEPENDS_${PN} = "python3-core"
 
 PACKAGECONFIG_append = " python" 
-PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON,-DBUILD_PYTHON=OFF,,python3-core bash"
+PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON -DPYTHON_INSTALL_DIR=${PYTHON_DIR},-DBUILD_PYTHON=OFF,,python3-core bash"
 
 inherit cmake python3-dir
 

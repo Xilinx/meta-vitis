@@ -12,7 +12,7 @@ DEPENDS = "protobuf-native protobuf-c boost unilog"
 
 PACKAGECONFIG_append = " test python"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
-PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON,-DBUILD_PYTHON=OFF,python3-pybind11,"
+PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON -DPYTHON_INSTALL_DIR=${PYTHON_DIR},-DBUILD_PYTHON=OFF,python3-pybind11,"
 
 inherit cmake python3-dir
 

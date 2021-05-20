@@ -1,14 +1,14 @@
-From 69acf077fe022f9e28de92359957af2653108307 Mon Sep 17 00:00:00 2001
+From 0f40c10b8f4b2313d3d9fb61139b296f9500acb1 Mon Sep 17 00:00:00 2001
 From: Tianfang Meng <tianfang@xcdldmz190092.xilinx.com>
-Date: Thu, 20 May 2021 15:27:24 +0800
-Subject: [PATCH] Fix python path for petalinux
+Date: Thu, 20 May 2021 17:30:46 +0800
+Subject: [PATCH] fix python path for petalinux
 
 ---
- cmake/vai_add_pybind11_module.cmake | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+ cmake/vai_add_pybind11_module.cmake | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/cmake/vai_add_pybind11_module.cmake b/cmake/vai_add_pybind11_module.cmake
-index e76c299..92a2239 100644
+index e76c299..7696786 100644
 --- a/cmake/vai_add_pybind11_module.cmake
 +++ b/cmake/vai_add_pybind11_module.cmake
 @@ -3,8 +3,9 @@ option(INSTALL_HOME "install python lib in cmake install path" OFF)
@@ -23,16 +23,6 @@ index e76c299..92a2239 100644
      find_path(
        _PYBIND11_PATH pybind11
        HINTS
-@@ -25,7 +26,8 @@ if(BUILD_PYTHON)
-     else(_PYMALLOC)
-       set(VAI_PYTHON_VERSION ${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR})
-     endif(_PYMALLOC)
--    set(PYTHON_SITE_PACKAGES "lib/${PYTHON_INSTALL_DIR}/site-packages")
-+    #    set(PYTHON_SITE_PACKAGES "lib/${PYTHON_INSTALL_DIR}/site-packages")
-+    set(PYTHON_SITE_PACKAGES "lib/${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages")
-     message("Path for Python Install ${PYTHON_SITE_PACKAGES}")
-     set(VAI_PYTHON_LIB python${VAI_PYTHON_VERSION})
-     set(VAI_PYTHON_INCLUDE_DIRS
 -- 
 2.17.1
 

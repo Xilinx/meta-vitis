@@ -11,7 +11,7 @@ S = "${WORKDIR}/git"
 DEPENDS = "json-c xrt xir target-factory"
 
 PACKAGECONFIG_append = " python test"
-PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON,-DBUILD_PYTHON=OFF,,python3-core"
+PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON -DPYTHON_INSTALL_DIR=${PYTHON_DIR},-DBUILD_PYTHON=OFF,,python3-core"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,opencv,"
 
 inherit cmake python3-dir
