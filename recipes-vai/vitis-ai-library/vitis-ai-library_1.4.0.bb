@@ -2,9 +2,9 @@ SUMMARY = "Vitis AI LIBRARY"
 DESCRIPTION = "Xilinx Vitis AI components - VITIS AI LIBRARY"
 
 require recipes-vai/vitis-ai-library/vitisai.inc
-SRC_URI = "git://gits@xcdl190260/aisw/Vitis-AI-Library.git;protocol=ssh;branch=dev"
+SRC_URI = "git://gitenterprise.xilinx.com/aisw/Vitis-AI-Library.git;protocol=https;branch=dev"
 
-SRCREV = "a63f1d5a89d2b0751e4fe52751997b27cf50ade6"
+SRCREV = "565e4d201a6d7278d094d69d38cac173c2bb39be"
 
 S = "${WORKDIR}/git"
 

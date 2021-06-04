@@ -2,9 +2,9 @@ SUMMARY = "Vitis AI XIR"
 DESCRIPTION = "Xilinx Intermediate Representation for deep learning algorithm. Define a graph based represention, provide APIs to serialize or deserialize a model and APIs for basic graph operations."
 
 require recipes-vai/vitis-ai-library/vitisai.inc
-SRC_URI = "git://gits@xcdl190260/aisw/xir.git;protocol=ssh;branch=dev"
+SRC_URI = "git://gitenterprise.xilinx.com/aisw/xir.git;protocol=https;branch=dev"
 
-SRCREV = "1a9246337177f50f0c51d9d14d8e854c89088dca"
+SRCREV = "574c58520e497a612d369ee5a9c7fed664b732b5"
 
 S = "${WORKDIR}/git"
 

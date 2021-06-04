@@ -2,9 +2,9 @@ SUMMARY = "Target Factory"
 DESCRIPTION = "A factory to manage DPU target description infos. Register targets and then you can get infos by name or fingerprint."
 
 require recipes-vai/vitis-ai-library/vitisai.inc
-SRC_URI = "git://gits@xcdl190260/aisw/target_factory.git;protocol=ssh;branch=dev"
+SRC_URI = "git://gitenterprise.xilinx.com/aisw/target_factory.git;protocol=https;branch=dev"
 
-SRCREV = "2a768f5741a22958cc1d38e0205cd868ecea86f5"
+SRCREV = "5c6de62c59d7b6d9b01cc458fc861c8c01961b05"
 
 S = "${WORKDIR}/git"
 

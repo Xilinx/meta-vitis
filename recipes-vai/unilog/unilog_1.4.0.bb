@@ -3,7 +3,7 @@ DESCRIPTION = "Xilinx Vitis AI components - a wrapper for glog. Define unified l
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
-SRC_URI = "git://gits@xcdl190260/aisw/unilog.git;protocol=ssh;branch=dev \
+SRC_URI = "git://gitenterprise.xilinx.com/aisw/unilog.git;protocol=https;branch=dev \
 	file://0001-fix-python-path-for-petalinux.patch \
 "
 
