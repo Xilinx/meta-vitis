@@ -2,12 +2,12 @@ SUMMARY = "Vitis AI RunTime"
 DESCRIPTION = "Runner is an application level runtime interface for DPU IPs based on XRT. It use XIR subgraph as input, and run it on different targets. There are also emulators implemented with same interface to make debuging eaiser."
 
 require recipes-vai/vitis-ai-library/vitisai.inc
-SRC_URI = "git://gitenterprise.xilinx.com/aisw/vart.git;protocol=https;branch=dev \
+SRC_URI = "git://gitenterprise.xilinx.com/aisw/vart.git;protocol=https;branch=1.4 \
 "
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-SRCREV = "381d15b99239a93251b9cdbef216995a61009e34"
+SRCREV = "8bed00f20ab7bc4944d75eba0b593c80bef1d945"
 
 S = "${WORKDIR}/git"
 
