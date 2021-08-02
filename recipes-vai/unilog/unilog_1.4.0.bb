@@ -7,14 +7,14 @@ SRC_URI = "git://gitenterprise.xilinx.com/aisw/unilog.git;protocol=https;branch=
 	file://0001-fix-python-path-for-petalinux.patch \
 "
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRCREV = "14965744a391cce3cb07e0ec128d5022450f1e1a"
 S = "${WORKDIR}/git"
 
 DEPENDS = "glog boost"
 
-PACKAGECONFIG_append = " test"
+PACKAGECONFIG:append = " test"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
 
 inherit cmake
@@ -26,5 +26,5 @@ EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 AUTO_LIBNAME_PKGS = ""
 
 FILES_SOLIBSDEV = ""
-INSANE_SKIP_${PN} += "dev-so"
-FILES_${PN} += "${libdir}/*.so"
+INSANE_SKIP:${PN} += "dev-so"
+FILES:${PN} += "${libdir}/*.so"
