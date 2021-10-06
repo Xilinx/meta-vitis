@@ -1,1 +1,1 @@
-IMAGE_INSTALL_append = " python3-pybind11"
+IMAGE_INSTALL:append = " python3-pybind11"

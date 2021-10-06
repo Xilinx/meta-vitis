@@ -7,7 +7,7 @@ S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/target_factory"
 
 DEPENDS = "unilog protobuf-native protobuf-c"
 
-PACKAGECONFIG_append = " test"
+PACKAGECONFIG:append = " test"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
 
 inherit cmake
@@ -19,5 +19,5 @@ EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 AUTO_LIBNAME_PKGS = ""
 
 FILES_SOLIBSDEV = ""
-INSANE_SKIP_${PN} += "dev-so"
-FILES_${PN} += "${libdir}/*.so"
+INSANE_SKIP:${PN} += "dev-so"
+FILES:${PN} += "${libdir}/*.so"

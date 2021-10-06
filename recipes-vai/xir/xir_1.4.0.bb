@@ -7,7 +7,7 @@ S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/xir"
 
 DEPENDS = "protobuf-native protobuf-c boost unilog"
 
-PACKAGECONFIG_append = " test python"
+PACKAGECONFIG:append = " test python"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
 PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON -DPYTHON_INSTALL_DIR=${PYTHON_DIR},-DBUILD_PYTHON=OFF,python3-pybind11,"
 
@@ -16,8 +16,8 @@ inherit cmake python3-dir
 EXTRA_OECMAKE += "-DBUILD_SHARED_LIBS:BOOL=TRUE -DCMAKE_BUILD_TYPE=Release -DBUILD_CONTRIB=OFF -DBUILD_DOC=OFF -DINSTALL_USER=OFF -DCMAKE_SYSROOT=${STAGING_DIR_HOST}"
 
 FILES_SOLIBSDEV = ""
-INSANE_SKIP_${PN} += "dev-so"
-FILES_${PN} += " \
+INSANE_SKIP:${PN} += "dev-so"
+FILES:${PN} += " \
 	${libdir}/*.so \
 	${PYTHON_SITEPACKAGES_DIR} \
 "

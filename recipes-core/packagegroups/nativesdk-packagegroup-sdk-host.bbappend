@@ -1,4 +1,4 @@
-RDEPENDS_${PN}_append = " \
+RDEPENDS:${PN}:append = " \
     nativesdk-protobuf \
     nativesdk-protobuf-c \
     nativesdk-protobuf-compiler \
