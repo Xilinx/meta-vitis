@@ -16,7 +16,7 @@ inherit cmake python3-dir
 EXTRA_OECMAKE += "-DENABLE_CPU_RUNNER=OFF -DENABLE_SIM_RUNNER=OFF -DENABLE_DPU_RUNNER=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSROOT=${STAGING_DIR_HOST}"
 
 # Vart uses dl_open, so package the .so files in the runtime package
-FILES_SOLIBSDEV = ""
+FILES:SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 FILES:${PN} += " \
 	${libdir}/*.so \

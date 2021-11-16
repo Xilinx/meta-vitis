@@ -18,6 +18,6 @@ EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 # by debian.bbclass. Prevent renaming in order to keep the package name consistent 
 AUTO_LIBNAME_PKGS = ""
 
-FILES_SOLIBSDEV = ""
+FILES:SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 FILES:${PN} += "${libdir}/*.so"
