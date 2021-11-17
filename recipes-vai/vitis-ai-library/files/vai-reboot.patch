@@ -1,0 +1,26 @@
+Using __DATE__ and __TIME__ is not supported in the Yocto Project, as it leads
+to non-deterministic binaries.
+
+| tools/Vitis-AI-Library/usefultools/src/reboot.c: In function 'print_version':
+| tools/Vitis-AI-Library/usefultools/src/reboot.c:26:17: error: macro "__DATE__" might prevent reproducible builds [-Werror=date-time]
+|    26 |   printf("%s (" __DATE__ " " __TIME__ ")\n", name);
+|       |                 ^~~~~~~~
+| tools/Vitis-AI-Library/usefultools/src/reboot.c:26:30: error: macro "__TIME__" might prevent reproducible builds [-Werror=date-time]
+|    26 |   printf("%s (" __DATE__ " " __TIME__ ")\n", name);
+|       |                              ^~~~~~~~
+
+Signed-off-by: Mark Hatle <mark.hatle@xilinx.com>
+
+diff --git a/tools/Vitis-AI-Library/usefultools/src/reboot.c b/tools/Vitis-AI-Library/usefultools/src/reboot.c
+index 122e6cb6e..795dfd166 100644
+--- a/usefultools/src/reboot.c
++++ b/usefultools/src/reboot.c
+@@ -23,7 +23,7 @@
+ #include <unistd.h>
+ 
+ static void print_version(const char *name) {
+-  printf("%s (" __DATE__ " " __TIME__ ")\n", name);
++  printf("%s (1.4.0)\n", name);
+ }
+ 
+ static void usage(FILE *out) {

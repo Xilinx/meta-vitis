@@ -3,6 +3,8 @@ DESCRIPTION = "Runner is an application level runtime interface for DPU IPs base
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
+SRC_URI += "file://vart-werror.patch file://vart-thread.patch"
+
 S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/vart"
 
 DEPENDS = "json-c xrt xir target-factory"

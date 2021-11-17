@@ -1,0 +1,33 @@
+Fix misisng limits include
+
+tools/Vitis-AI-Library/cpu_task/test/./cxxopts.hpp:481:42: error: 'numeric_limits' is not a member of 'std'
+|   481 |             if (u > static_cast<U>(-std::numeric_limits<T>::min()))
+|       |                                          ^~~~~~~~~~~~~~
+
+Signed-off-by: Mark Hatle <mark.hatle@xilinx.com>
+
+diff --git a/tools/Vitis-AI-Library/cpu_task/test/show_binary_image.cpp b/tools/Vitis-AI-Library/cpu_task/test/show_binary_image.cpp
+index 47dbd7d91..e4f9230b6 100644
+--- a/cpu_task/test/show_binary_image.cpp
++++ b/cpu_task/test/show_binary_image.cpp
+@@ -18,6 +18,7 @@
+ #include <fstream>
+ #include <iomanip>
+ #include <iostream>
++#include <limits>
+ 
+ #include "./cxxopts.hpp"
+ 
+diff --git a/tools/Vitis-AI-Library/cpu_task/test/test_op_imp.cpp b/tools/Vitis-AI-Library/cpu_task/test/test_op_imp.cpp
+index 267311cf2..f06b0e8a5 100644
+--- a/cpu_task/test/test_op_imp.cpp
++++ b/cpu_task/test/test_op_imp.cpp
+@@ -16,6 +16,8 @@
+ 
+ #include <iostream>
+ 
++#include <limits>
++
+ #include "./cxxopts.hpp"
+ #include "vart/op_imp.h"
+ #include "vart/runner_helper.hpp"
