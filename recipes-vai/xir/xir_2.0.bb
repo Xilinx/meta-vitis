@@ -3,13 +3,10 @@ DESCRIPTION = "Xilinx Intermediate Representation for deep learning algorithm. D
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
-SRC_URI += "file://xir-werror.patch"
-
 S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/xir"
 
 DEPENDS = "protobuf-native protobuf-c boost unilog"
 
-PACKAGECONFIG:append = " test python"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
 PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON -DPYTHON_INSTALL_DIR=${PYTHON_DIR},-DBUILD_PYTHON=OFF,python3-pybind11,"
 

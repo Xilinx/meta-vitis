@@ -7,8 +7,8 @@ S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/target_factory"
 
 DEPENDS = "unilog protobuf-native protobuf-c"
 
-PACKAGECONFIG:append = " test"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
+PACKAGECONFIG[python] = ",,,"
 
 inherit cmake
 

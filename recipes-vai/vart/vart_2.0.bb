@@ -7,15 +7,23 @@ SRC_URI += "file://vart-werror.patch file://vart-thread.patch"
 
 S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/vart"
 
-DEPENDS = "json-c xrt xir target-factory"
+DEPENDS = "json-c xir target-factory"
 
-PACKAGECONFIG:append = " python test"
-PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON -DPYTHON_INSTALL_DIR=${PYTHON_DIR},-DBUILD_PYTHON=OFF,,python3-core"
+# By default, Vart enables vitis-flow which depends on xrt. Please remove this line if use vivado-flow
+PACKAGECONFIG:append = " vitis"
+
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,opencv,"
+PACKAGECONFIG[python] = "-DBUILD_PYTHON=ON -DPYTHON_INSTALL_DIR=${PYTHON_DIR},-DBUILD_PYTHON=OFF,,python3-core"
+PACKAGECONFIG[vitis] = ",,xrt,"
 
 inherit cmake python3-dir
 
 EXTRA_OECMAKE += "-DENABLE_CPU_RUNNER=OFF -DENABLE_SIM_RUNNER=OFF -DENABLE_DPU_RUNNER=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSROOT=${STAGING_DIR_HOST}"
+
+do_configure:prepend() {
+
+	rm -rf ${STAGING_DIR_HOST}/usr/share/cmake/XRT/
+}
 
 # Vart uses dl_open, so package the .so files in the runtime package
 FILES:SOLIBSDEV = ""

@@ -13,8 +13,8 @@ S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/unilog"
 
 DEPENDS = "glog boost"
 
-PACKAGECONFIG:append = " test"
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
+PACKAGECONFIG[python] = ",,,"
 
 inherit cmake
 

@@ -1,0 +1,51 @@
+Fix the following errors:
+
+| In file included from .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/utils.cpp:17:
+| .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/./utils.hpp:52:41: error: 'size_t' has not been declared
+|    52 |                                         size_t batch, size_t ndim);
+|       |                                         ^~~~~~
+| .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/./utils.hpp:52:55: error: 'size_t' has not been declared
+|    52 |                                         size_t batch, size_t ndim);
+|       |                                                       ^~~~~~
+| .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/utils.cpp: In function 'std::vector<float> vitis::ai::clocs::transform_for_nms(const std::vector<std::vector<float> >&)':
+| .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/utils.cpp:213:27: error: call of overloaded 'corner_to_standup_2d(std::vector<float>&, long unsigned int&, int)' is ambiguous
+|   213 |       corner_to_standup_2d(box_preds_corners, selected_size, 2);
+|       |       ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+| In file included from .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/utils.cpp:17:
+| .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/./utils.hpp:51:20: note: candidate: 'std::vector<float> vitis::ai::clocs::corner_to_standup_2d(const std::vector<float>&, int, int)'
+|    51 | std::vector<float> corner_to_standup_2d(const std::vector<float>& boxes_corner,
+|       |                    ^~~~~~~~~~~~~~~~~~~~
+| .../tmp/work/.../vitis-ai-library/2.0-r0/git/tools/Vitis-AI-Library/clocs/src/utils.cpp:119:15: note: candidate: 'std::vector<float> vitis::ai::clocs::corner_to_standup_2d(const std::vector<float>&, size_t, size_t)'
+|   119 | vector<float> corner_to_standup_2d(const vector<float>& boxes_corner,
+|       |               ^~~~~~~~~~~~~~~~~~~~
+
+Signed-off-by: Mark Hatle <mark.hatle@xilinx.com>
+
+diff --git a/tools/Vitis-AI-Library/clocs/src/utils.cpp b/tools/Vitis-AI-Library/clocs/src/utils.cpp
+index b249f5a56..1f30e63e7 100644
+--- a/clocs/src/utils.cpp
++++ b/clocs/src/utils.cpp
+@@ -116,8 +116,8 @@ vector<float> center_to_corner_box_2d(vector<float>& centers,
+   return corners;
+ }
+ 
+-vector<float> corner_to_standup_2d(const vector<float>& boxes_corner,
+-                                   size_t batch, size_t ndim) {
++std::vector<float> corner_to_standup_2d(const std::vector<float>& boxes_corner,
++                                   std::size_t batch, std::size_t ndim) {
+   // boxes_corner: [batch, K, ndim]
+   //
+   // transpose : [batch, K, ndim] => [batch, ndim, K]
+diff --git a/tools/Vitis-AI-Library/clocs/src/utils.hpp b/tools/Vitis-AI-Library/clocs/src/utils.hpp
+index d3da9f34c..a41e47fba 100644
+--- a/clocs/src/utils.hpp
++++ b/clocs/src/utils.hpp
+@@ -49,7 +49,7 @@ std::vector<float> center_to_corner_box_2d(std::vector<float>& centers,
+                                            std::vector<float>& angles);
+ 
+ std::vector<float> corner_to_standup_2d(const std::vector<float>& boxes_corner,
+-                                        size_t batch, size_t ndim);
++                                        std::size_t batch, std::size_t ndim);
+ 
+ std::vector<int> non_max_suppression_cpu(V2F& boxes_in, const V1F& scores_,
+                                          int pre_max_size_, int post_max_size_,
