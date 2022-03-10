@@ -1,5 +1,5 @@
 SUMMARY = "VVAS gst"
-DESCRIPTION = "VVAS gstreamer plugins"
+DESCRIPTION = "VVAS gstreamer plugins for VVAS SDK"
 SECTION = "multimedia"
 LICENSE = "Apache-2.0 & LGPLv2 & MIT & BSD-3-Clause"
 
@@ -11,7 +11,7 @@ RDEPENDS:${PN} = "gstreamer1.0-plugins-base"
 
 inherit meson pkgconfig gettext
 
-S = "${WORKDIR}/git/ivas-gst-plugins"
+S = "${WORKDIR}/git/vvas-gst-plugins"
 
 GIR_MESON_ENABLE_FLAG = "enabled"
 GIR_MESON_DISABLE_FLAG = "disabled"
