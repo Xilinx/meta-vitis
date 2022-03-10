@@ -1,5 +1,5 @@
 SUMMARY = "VVAS util"
-DESCRIPTION = "VVAS utils"
+DESCRIPTION = "VVAS utils for VVAS SDK"
 SECTION = "multimedia"
 LICENSE = "Apache-2.0"
 
@@ -9,12 +9,12 @@ DEPENDS = "glib-2.0 glib-2.0-native xrt libcap libxml2 bison-native flex-native 
 
 inherit meson pkgconfig gettext
 
-S = "${WORKDIR}/git/ivas-utils"
+S = "${WORKDIR}/git/vvas-utils"
 
 GIR_MESON_ENABLE_FLAG = "enabled"
 GIR_MESON_DISABLE_FLAG = "disabled"
 
-FILES:${PN} += "${libdir}/libivasutil.so ${libdir}/libxrtutil.so"
+FILES:${PN} += "${libdir}/libvvasutil.so ${libdir}/libxrtutil.so"
 FILES:${PN}-dev = "${includedir} ${libdir}/pkgconfig/*"
 
 #CVE_PRODUCT = "gstreamer"

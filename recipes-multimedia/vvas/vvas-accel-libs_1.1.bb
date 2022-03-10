@@ -9,10 +9,10 @@ DEPENDS = "glib-2.0 glib-2.0-native xrt libcap libxml2 bison-native flex-native 
 
 inherit meson pkgconfig gettext
 
-S = "${WORKDIR}/git/ivas-accel-sw-libs"
+S = "${WORKDIR}/git/vvas-accel-sw-libs"
 
 GIR_MESON_ENABLE_FLAG = "enabled"
 GIR_MESON_DISABLE_FLAG = "disabled"
 
-FILES:${PN} += "${libdir}/ivas/*.so ${libdir}/*.so"
+FILES:${PN} += "${libdir}/vvas/*.so ${libdir}/*.so"
 FILES:${PN}-dev = "${includedir}"
