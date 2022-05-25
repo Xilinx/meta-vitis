@@ -3,7 +3,7 @@ DESCRIPTION = "Xilinx Intermediate Representation for deep learning algorithm. D
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
-S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/xir"
+S = "${WORKDIR}/git/src/Vitis-AI-Runtime/VART/xir"
 
 DEPENDS = "protobuf-native protobuf-c boost unilog"
 
@@ -14,7 +14,7 @@ inherit cmake python3-dir
 
 EXTRA_OECMAKE += "-DBUILD_SHARED_LIBS:BOOL=TRUE -DCMAKE_BUILD_TYPE=Release -DBUILD_CONTRIB=OFF -DBUILD_DOC=OFF -DINSTALL_USER=OFF -DCMAKE_SYSROOT=${STAGING_DIR_HOST}"
 
-FILES:SOLIBSDEV = ""
+FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 FILES:${PN} += " \
 	${libdir}/*.so \

@@ -3,9 +3,7 @@ DESCRIPTION = "Runner is an application level runtime interface for DPU IPs base
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
-SRC_URI += "file://vart-werror.patch file://vart-thread.patch"
-
-S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/vart"
+S = "${WORKDIR}/git/src/Vitis-AI-Runtime/VART/vart"
 
 DEPENDS = "json-c xir target-factory"
 
@@ -26,7 +24,7 @@ do_configure:prepend() {
 }
 
 # Vart uses dl_open, so package the .so files in the runtime package
-FILES:SOLIBSDEV = ""
+FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 FILES:${PN} += " \
 	${libdir}/*.so \

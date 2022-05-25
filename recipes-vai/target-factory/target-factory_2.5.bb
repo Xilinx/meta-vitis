@@ -3,7 +3,7 @@ DESCRIPTION = "A factory to manage DPU target description infos. Register target
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
-S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/target_factory"
+S = "${WORKDIR}/git/src/Vitis-AI-Runtime/VART/target_factory"
 
 DEPENDS = "unilog protobuf-native protobuf-c"
 
@@ -18,6 +18,6 @@ EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 # by debian.bbclass. Prevent renaming in order to keep the package name consistent 
 AUTO_LIBNAME_PKGS = ""
 
-FILES:SOLIBSDEV = ""
+FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 FILES:${PN} += "${libdir}/*.so"

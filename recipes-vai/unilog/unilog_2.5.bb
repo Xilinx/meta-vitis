@@ -9,7 +9,7 @@ SRC_URI += " \
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-S = "${WORKDIR}/git/tools/Vitis-AI-Runtime/VART/unilog"
+S = "${WORKDIR}/git/src/Vitis-AI-Runtime/VART/unilog"
 
 DEPENDS = "glog boost"
 
@@ -24,6 +24,6 @@ EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
 # by debian.bbclass. Prevent renaming in order to keep the package name consistent 
 AUTO_LIBNAME_PKGS = ""
 
-FILES:SOLIBSDEV = ""
+FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 FILES:${PN} += "${libdir}/*.so"
