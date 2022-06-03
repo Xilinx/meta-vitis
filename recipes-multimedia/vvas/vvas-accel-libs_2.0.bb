@@ -15,4 +15,4 @@ GIR_MESON_ENABLE_FLAG = "enabled"
 GIR_MESON_DISABLE_FLAG = "disabled"
 
 FILES:${PN} += "${libdir}/vvas/*.so ${libdir}/*.so"
-FILES:${PN}-dev = "${includedir}"
+FILES_SOLIBSDEV = ""
