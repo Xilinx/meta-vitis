@@ -27,4 +27,7 @@ RDEPENDS:${PN} = "\
 RDEPENDS:${PN}-dev += "\
     protobuf-c \
     libeigen-dev \
+    python3-marshmallow \
+    python3-tqdm \
+    python3-h5py \
     "
