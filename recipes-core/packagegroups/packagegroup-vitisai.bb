@@ -1,6 +1,8 @@
-DESCRIPTION = "PetaLinux Vitis AI packages"
+DESCRIPTION = "Vitis AI packages"
 
 inherit packagegroup
+
+PROVIDES = "packagegroup-petalinux-vitisai"
 
 # Since dnndk is SOC_FAMILY specific, this package must be also
 PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
@@ -23,6 +25,7 @@ RDEPENDS:${PN} = "\
     vart \
     unilog \
     "
+RREPLACES:${PN} = "packagegroup-petalinux-vitisai"
 
 RDEPENDS:${PN}-dev += "\
     protobuf-c \
@@ -31,3 +34,4 @@ RDEPENDS:${PN}-dev += "\
     python3-tqdm \
     python3-h5py \
     "
+RREPLACES:${PN}-dev = "packagegroup-petalinux-vitisai-dev"
