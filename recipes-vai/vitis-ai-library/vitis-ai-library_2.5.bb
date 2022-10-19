@@ -14,6 +14,9 @@ inherit cmake python3-dir pkgconfig
 
 EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSROOT=${STAGING_DIR_HOST} -DBUILD_SHARED_LIBS=ON"
 
+# Workaround for: error: 'unsigned char* MD5(const unsigned char*, size_t, unsigned char*)' is deprecated: Since OpenSSL 3.0
+CXXFLAGS += "-Wno-deprecated-declarations"
+
 FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 
