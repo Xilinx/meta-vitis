@@ -1,11 +1,10 @@
 DESCRIPTION = "Vitis AI packages"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 inherit packagegroup
 
 PROVIDES = "packagegroup-petalinux-vitisai"
-
-# Since dnndk is SOC_FAMILY specific, this package must be also
-PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:zynqmp = ".*"

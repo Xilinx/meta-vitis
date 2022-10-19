@@ -1,5 +1,7 @@
 DESCRIPTION = "Packages for Vitis compatible platforms"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 inherit packagegroup
 
 PROVIDES = "packagegroup-petalinux-vitis-acceleration"
@@ -36,5 +38,4 @@ RRECOMMENDS:${PN}-recommends = " \
 		"
 RRPLACES:${PN}-recommends = "packagegroup-petalinux-vitis-acceleration-recommends"
 
-PACKAGE_ARCH:versal-ai-core = "${MACHINE_ARCH}"
 RDEPENDS:${PN}-essential:append:versal-ai-core = "ai-engine-driver"

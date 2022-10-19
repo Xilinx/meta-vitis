@@ -1,5 +1,7 @@
 DESCRIPTION = "Vitis Video Analytics SDK (VVAS) packages"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 inherit packagegroup
 
 PROVIDES = "packagegroup-petalinux-vvas"
