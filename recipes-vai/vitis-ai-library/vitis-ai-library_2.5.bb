@@ -3,6 +3,8 @@ DESCRIPTION = "Xilinx Vitis AI components - VITIS AI LIBRARY"
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
+SRC_URI += "file://0001-Add-missing-include-array.patch;striplevel=3"
+
 S = "${WORKDIR}/git/src/Vitis-AI-Library"
 
 DEPENDS = "protobuf-native vart opencv googletest libeigen libeigen-native"
@@ -16,6 +18,12 @@ EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSROOT=${STAGING_DIR_HOST}
 
 # Workaround for: error: 'unsigned char* MD5(const unsigned char*, size_t, unsigned char*)' is deprecated: Since OpenSSL 3.0
 CXXFLAGS += "-Wno-deprecated-declarations"
+
+# Workaround for: -Wall causing an issue with an unused-result
+CXXFLAGS += "-Wno-unused-result"
+
+# Workaround for: -Wall causing an issue with possibly uninitialized values
+CXXFLAGS += "-Wno-maybe-uninitialized"
 
 FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"

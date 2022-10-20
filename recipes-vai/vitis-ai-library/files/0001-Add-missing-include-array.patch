@@ -1,0 +1,38 @@
+From 8d4e545c4ff8b08f100b46991f4bc093db61e7e6 Mon Sep 17 00:00:00 2001
+From: Mark Hatle <mark.hatle@kernel.crashing.org>
+Date: Wed, 19 Oct 2022 22:10:52 -0500
+Subject: [PATCH] Add missing '#include <array>'
+
+Signed-off-by: Mark Hatle <mark.hatle@kernel.crashing.org>
+---
+ src/Vitis-AI-Library/math/test/prototype_8bit_to_4bit.cpp | 1 +
+ src/Vitis-AI-Library/xnnpp/src/x_autonomous3d/utils.hpp   | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/src/Vitis-AI-Library/math/test/prototype_8bit_to_4bit.cpp b/src/Vitis-AI-Library/math/test/prototype_8bit_to_4bit.cpp
+index 425597f20..3fc5799e9 100644
+--- a/src/Vitis-AI-Library/math/test/prototype_8bit_to_4bit.cpp
++++ b/src/Vitis-AI-Library/math/test/prototype_8bit_to_4bit.cpp
+@@ -26,6 +26,7 @@
+ #include <random>
+ #include <sstream>
+ #include <type_traits>
++#include <array>
+ #include <vitis/ai/env_config.hpp>
+ 
+ DEF_ENV_PARAM(DEBUG_TEST, "0");
+diff --git a/src/Vitis-AI-Library/xnnpp/src/x_autonomous3d/utils.hpp b/src/Vitis-AI-Library/xnnpp/src/x_autonomous3d/utils.hpp
+index 966bb756d..ad2ab89d7 100644
+--- a/src/Vitis-AI-Library/xnnpp/src/x_autonomous3d/utils.hpp
++++ b/src/Vitis-AI-Library/xnnpp/src/x_autonomous3d/utils.hpp
+@@ -20,6 +20,7 @@
+ #include <string>
+ #include <tuple>
+ #include <vector>
++#include <array>
+ #include "float.h"
+ 
+ namespace vitis {
+-- 
+2.25.1
+
