@@ -14,6 +14,9 @@ inherit cmake python3-dir
 
 EXTRA_OECMAKE += "-DBUILD_SHARED_LIBS:BOOL=TRUE -DCMAKE_BUILD_TYPE=Release -DBUILD_CONTRIB=OFF -DBUILD_DOC=OFF -DINSTALL_USER=OFF -DCMAKE_SYSROOT=${STAGING_DIR_HOST}"
 
+# Workaround for: "-Werror=maybe-uninitialized" failing
+CXXFLAGS += "-Wno-maybe-uninitialized"
+
 FILES_SOLIBSDEV = ""
 INSANE_SKIP:${PN} += "dev-so"
 FILES:${PN} += " \
