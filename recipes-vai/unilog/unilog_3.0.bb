@@ -7,9 +7,7 @@ SRC_URI += " \
 	file://0001-fix-python-path-for-petalinux.patch \
 "
 
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
-
-S = "${WORKDIR}/git/src/Vitis-AI-Runtime/VART/unilog"
+S = "${WORKDIR}/git/src/vai_runtime/unilog"
 
 DEPENDS = "glog boost"
 

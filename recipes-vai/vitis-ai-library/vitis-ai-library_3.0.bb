@@ -3,7 +3,7 @@ DESCRIPTION = "Xilinx Vitis AI components - VITIS AI LIBRARY"
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
-S = "${WORKDIR}/git/src/Vitis-AI-Library"
+S = "${WORKDIR}/git/src/vai_library"
 
 DEPENDS = "protobuf-native vart opencv googletest libeigen libeigen-native"
 

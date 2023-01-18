@@ -3,7 +3,7 @@ DESCRIPTION = "Xilinx Intermediate Representation for deep learning algorithm. D
 
 require recipes-vai/vitis-ai-library/vitisai.inc
 
-S = "${WORKDIR}/git/src/Vitis-AI-Runtime/VART/xir"
+S = "${WORKDIR}/git/src/vai_runtime/xir"
 
 DEPENDS = "protobuf-native protobuf-c boost unilog"
 
