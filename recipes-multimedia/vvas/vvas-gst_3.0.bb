@@ -16,9 +16,15 @@ TARGET_CPPFLAGS:append = " -I=/usr/include/xrt"
 S = "${WORKDIR}/git/vvas-gst-plugins"
 B = "${S}/build"
 
+EXTRA_OEMESON += " \
+    -Denable_ppe=1 \
+    -Dvvas_core_utils='GLIB' \
+"
+
 GIR_MESON_ENABLE_FLAG = "enabled"
 GIR_MESON_DISABLE_FLAG = "disabled"
 
 FILES:${PN} += "${libdir}/gstreamer-1.0/*.so"
+FILES:${PN}-dev += "${libdir}/gstreamer-1.0/*.a ${libdir}/gstreamer-1.0/include"
 
 #CVE_PRODUCT = "gstreamer"
