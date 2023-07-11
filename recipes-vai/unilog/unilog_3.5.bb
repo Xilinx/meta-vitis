@@ -16,7 +16,7 @@ PACKAGECONFIG[python] = ",,,"
 
 inherit cmake
 
-EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release"
+EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON"
 
 # unilog contains only one shared lib and will therefore become subject to renaming
 # by debian.bbclass. Prevent renaming in order to keep the package name consistent 

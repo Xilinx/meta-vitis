@@ -5,7 +5,7 @@ require recipes-vai/vitis-ai-library/vitisai.inc
 
 S = "${WORKDIR}/git/src/vai_runtime/target_factory"
 
-DEPENDS = "unilog protobuf-native protobuf-c"
+DEPENDS = "unilog protobuf-native protobuf"
 
 PACKAGECONFIG[test] = "-DBUILD_TEST=ON,-DBUILD_TEST=OFF,,"
 PACKAGECONFIG[python] = ",,,"
