@@ -1,9 +1,9 @@
 DESCRIPTION = "PetaLinux Vitis AI packages"
 
-inherit packagegroup
-
-# Since dnndk is SOC_FAMILY specific, this package must be also
+# Package contains references to renamed binaries, so is arch specific
 PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+
+inherit packagegroup
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:zynqmp = ".*"
