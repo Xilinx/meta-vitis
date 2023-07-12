@@ -4,7 +4,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=2b3b6a5b8f5050f7edbf74b44d59497a"
 #SECTION = "libs"
 
-SRC_URI = "git://github.com/ermig1979/Simd.git \
+SRC_URI = "git://github.com/ermig1979/Simd.git;branch=master;protocol=https \
            file://0001-Add-support-for-cell-size-4.patch \
            file://0002-CMakeLists.txt-Remove-REGEX.patch \
           "
