@@ -1,13 +1,14 @@
 DESCRIPTION = "PetaLinux Vitis AI packages"
 
 # Package contains references to renamed binaries, so is arch specific
-PACKAGE_ARCH = "${SOC_FAMILY_ARCH}"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup
 
 COMPATIBLE_MACHINE = "^$"
 COMPATIBLE_MACHINE:zynqmp = ".*"
 COMPATIBLE_MACHINE:versal = ".*"
+COMPATIBLE_MACHINE:versal-net = ".*"
 
 RDEPENDS:${PN} = "\
     glog \
