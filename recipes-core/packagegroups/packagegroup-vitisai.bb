@@ -1,4 +1,4 @@
-DESCRIPTION = "PetaLinux Vitis AI packages"
+DESCRIPTION = "Vitis AI packages"
 
 # Package contains references to renamed binaries, so is arch specific
 PACKAGE_ARCH = "${MACHINE_ARCH}"
