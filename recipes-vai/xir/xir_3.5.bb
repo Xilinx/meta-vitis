@@ -20,3 +20,5 @@ FILES:${PN} += " \
 	${libdir}/*.so \
 	${PYTHON_SITEPACKAGES_DIR} \
 "
+
+SKIP_RECIPE[xir] = "do_compile() fails: needs a source-code update for the latest compiler by the component owner"

@@ -23,3 +23,5 @@ FILES:${PN} += " \
 	${PYTHON_SITEPACKAGES_DIR} \
 	${libdir}/*.so \
 "
+
+SKIP_RECIPE[vitis-ai-library] = "depends on vart, which depends on xir, which currently does not build"

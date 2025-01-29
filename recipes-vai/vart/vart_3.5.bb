@@ -32,3 +32,5 @@ FILES:${PN} += " \
 "
 
 SYSROOT_DIRS += "${bindir}"
+
+SKIP_RECIPE[vart] = "depends on xir, which currently does not build"
