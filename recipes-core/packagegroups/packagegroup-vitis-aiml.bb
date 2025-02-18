@@ -11,7 +11,6 @@ VITIS_AI_ML_PACKAGES = " \
 	hdf5 \
 	libeigen \
 	nlohmann-json \
-	protobuf \
 	python3-build \
 	python3-pip \
 	python3-pybind11 \
@@ -28,7 +27,6 @@ VITIS_AI_ML_DEV_PACKAGES = " \
 	hdf5-dev \
 	libeigen-dev \
 	nlohmann-json-dev \
-	protobuf-dev \
 	python3-numpy-dev \
 	python3-pybind11-dev \
 	python3-pybind11-json-dev \

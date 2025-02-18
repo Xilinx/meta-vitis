@@ -8,14 +8,9 @@ inherit_defer nativesdk
 PACKAGEGROUP_DISABLE_COMPLEMENTARY = "1"
 
 VITIS_AI_ML_NATIVESDK_PACKAGES = " \
-	protobuf \
-	protobuf-c \
-	protobuf-compiler \
-	protobuf-dev \
 	python3-build \
 	python3-numpy \
 	python3-pip \
-	python3-protobuf \
 	python3-pybind11 \
 	python3-setuptools \
 	python3-wheel \
