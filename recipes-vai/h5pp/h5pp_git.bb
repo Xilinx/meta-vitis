@@ -20,7 +20,7 @@ inherit cmake
 # that this is a directory and not a file:
 #
 # .../poky/meta/classes-global/insane.bbclass', lineno: 1377, function: do_qa_patch
-# Exception: IsADirectoryError: [Errno 21] Is a directory: '.../build/tmp/work/cortexa72-cortexa53-basecamp-linux/h5pp/1.0+git/git/quickstart/git-clone-install-with-conanfile.py'
+# Exception: IsADirectoryError: [Errno 21] Is a directory: '.../build/tmp/work/cortexa72-cortexa53-amd-linux/h5pp/1.0+git/git/quickstart/git-clone-install-with-conanfile.py'
 do_source_cleanup() {
        mv ${S}/quickstart/git-clone-install-with-conanfile.py ${S}/quickstart/git-clone-install-with-conanfile
 }
