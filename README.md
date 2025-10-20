@@ -18,7 +18,7 @@ When creating patches, please use below format.
 `git format-patch -s --subject "meta-vitis][<release-version>][PATCH" -1`
 
 **Example:**
-`git format-patch -s --subject "meta-vitis][rel-v2024.2][PATCH" -1`
+`git format-patch -s --subject "meta-vitis][rel-v2026.1][PATCH" -1`
 
 **Maintainers:**
 
@@ -44,7 +44,7 @@ This layer depends on:
         https://github.com/Xilinx/meta-xilinx (development and AMD release)
 	layers: meta-xilinx-core, meta-xilinx-microblaze, meta-xilinx-bsp,
             meta-xilinx-standalone, meta-xilinx-vendor.
-	branch: scarthgap or AMD release version (e.g. rel-v2024.2)
+	branch: scarthgap or AMD release version (e.g. rel-v2026.1)
 
 	URI: https://git.yoctoproject.org/meta-arm
 	layers: meta-arm, meta-arm-toolchain
