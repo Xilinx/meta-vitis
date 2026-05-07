@@ -1,3 +1,5 @@
+SUMMARY = "Native-SDK packagegroup containing the host-side AMD Vitis \
+AI/ML tooling shipped in the SDK installer."
 DESCRIPTION = "Vitis AI/ML packages for SDK"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"

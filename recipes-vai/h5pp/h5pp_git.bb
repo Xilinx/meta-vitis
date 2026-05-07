@@ -1,4 +1,7 @@
-DESCRIPTION = "h5pp is a high-level, header-only, C++17 interface for the HDF5 C library."
+SUMMARY = "h5pp: a high-level, header-only C++17 wrapper for the HDF5 \
+library, used by the AMD Vitis AI/ML stack."
+DESCRIPTION = "h5pp is a high-level, header-only, C++17 interface for \
+the HDF5 C library."
 HOMEPAGE = "https://github.com/DavidAce/h5pp"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=08b672edb94ecca6dddee852b4d53cd2"

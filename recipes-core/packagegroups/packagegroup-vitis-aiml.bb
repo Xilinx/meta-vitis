@@ -1,3 +1,5 @@
+SUMMARY = "Packagegroup pulling in the on-target AMD Vitis AI/ML \
+runtime and example applications."
 DESCRIPTION = "Vitis AI/ML packages"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
