@@ -11,8 +11,6 @@ SRC_URI = "git://github.com/DavidAce/h5pp;protocol=https;branch=master"
 PV = "1.11.2+git"
 SRCREV = "81bc69633e91245231bc905fe47176a090854683"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "zlib hdf5 spdlog fmt libeigen"
 
 inherit cmake
