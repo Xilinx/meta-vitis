@@ -33,11 +33,14 @@ VITIS_AI_ML_DEV_PACKAGES = " \
 	python3-pybind11-dev \
 	python3-pybind11-json-dev \
 	spdlog-dev \
-	xsimd-dev \
-	xtensor-dev \
 	xtl-dev \
 	zlib-dev \
 	"
+
+# Disabled (requires meta-ros):
+#       xsimd-dev \
+#	xtensor-dev \
+#
 
 RDEPENDS:${PN} = "${VITIS_AI_ML_PACKAGES}"
 RDEPENDS:${PN}-dev = "${VITIS_AI_ML_DEV_PACKAGES}"
