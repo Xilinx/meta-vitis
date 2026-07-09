@@ -11,7 +11,6 @@ VITIS_AI_ML_PACKAGES = " \
 	glog \
 	gsl \
 	hdf5 \
-	libeigen \
 	nlohmann-json \
 	python3-build \
 	python3-pip \
