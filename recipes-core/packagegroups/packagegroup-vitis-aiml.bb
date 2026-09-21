@@ -35,11 +35,5 @@ VITIS_AI_ML_DEV_PACKAGES = " \
 	zlib-dev \
 	"
 
-# Disabled (requires meta-ros):
-#       xsimd-dev \
-#	xtensor-dev \
-#	xtl-dev \
-#
-
 RDEPENDS:${PN} = "${VITIS_AI_ML_PACKAGES}"
 RDEPENDS:${PN}-dev = "${VITIS_AI_ML_DEV_PACKAGES}"
