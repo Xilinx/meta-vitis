@@ -10,12 +10,12 @@ inherit_defer nativesdk
 PACKAGEGROUP_DISABLE_COMPLEMENTARY = "1"
 
 VITIS_AI_ML_NATIVESDK_PACKAGES = " \
-	python3-build \
-	python3-numpy \
-	python3-pip \
-	python3-pybind11 \
-	python3-setuptools \
-	python3-wheel \
+	nativesdk-python3-build \
+	nativesdk-python3-numpy \
+	nativesdk-python3-pip \
+	nativesdk-python3-pybind11 \
+	nativesdk-python3-setuptools \
+	nativesdk-python3-wheel \
 	"
 
 RDEPENDS:${PN} = "${VITIS_AI_ML_NATIVESDK_PACKAGES}"
